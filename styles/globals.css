@@ -4,7 +4,10 @@
 
 @layer components {
   .subheader {
-      @apply text-2xl border border-black p-3 text-black tracking-[15px] font-extralight;
-        writing-mode: vertical-rl;
+      @apply text-lg border border-black p-2 pt-5 text-black tracking-[15px] font-light;
+      writing-mode: vertical-rl;
+  }
+  .slide-group__wrapper{
+    @apply flex w-full overflow-x-scroll scroll-smooth snap-mandatory snap-x gap-4
   }
 }
