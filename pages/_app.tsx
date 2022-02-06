@@ -1,19 +1,20 @@
-import type { AppProps } from 'next/app';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
+import type { AppProps } from "next/app";
+import { ApolloProvider } from "@apollo/client";
+import client from "../plugin/apollo-client.js";
+import Head from "next/head";
 
-const client = new ApolloClient({
-  uri: process.env.API_ENDPOINT || "https://asia-east2-ohayou-hu-2022.cloudfunctions.net/graphql",
-  cache: new InMemoryCache(),
-});
-
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </>
   );
 }
 

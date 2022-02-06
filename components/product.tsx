@@ -1,15 +1,10 @@
-import Image from "next/image";
-
-const myLoader = ({ src, width, quality }) => {
-  return `https://www.awesomemerchandise.com/assets/images/products/Continental-Unisex-Classic-Jersey-T-Shirts_media-02.jpg?resizeid=6&resizeh=1200&resizew=1200`;
-};
-
 const product = () => {
   return (
-    <div className="container">
-      <div className="card">
-        <Image loader={myLoader} src="me.png" alt="Picture of the author" width={500} height={500} />
+    <div className="group mr-4">
+      <div className="w-[300px] bg-gray-200 aspect-square   group-hover:opacity-75">
+        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
       </div>
+      <h3 className="text-sm text-gray-700">單色入｜LAYERING 必備刺繡打底闊褲</h3>
     </div>
   );
 };

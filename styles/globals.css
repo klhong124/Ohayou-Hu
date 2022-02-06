@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .subheader {
+      @apply text-2xl border border-black p-3 text-black tracking-[15px] font-extralight;
+        writing-mode: vertical-rl;
+  }
+}
