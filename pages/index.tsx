@@ -47,6 +47,15 @@ export default function Home({ data }) {
           <Product />
           <Product />
         </ProductList>
+        <br />
+        <ProductList subheader="人氣熱賣">
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </ProductList>
       </Layout>
     </div>
   );

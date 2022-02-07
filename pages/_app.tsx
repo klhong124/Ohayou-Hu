@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <Component {...pageProps} />
       </ApolloProvider>
+
     </>
   );
 }
