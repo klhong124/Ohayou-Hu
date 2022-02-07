@@ -15,7 +15,7 @@ const Cover = () => {
 };
 const Bio = () => {
   return (
-    <div className="flex my-12 sm:my-20  justify-center ">
+    <div className="flex my-12 sm:my-20  justify-center" data-aos="fade-up" data-aos-duration="3000">
       <div className="border-b h-0 w-3 mx-4 mt-2 border-black"></div>
       <p className="tracking-[5px] sm:tracking-[12px] font-light">
         中醫較常鼓勵大眾早餐食粥 ， <br />
