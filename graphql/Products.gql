@@ -1,0 +1,31 @@
+query Products {
+  products {
+    _id
+    model {
+      _id
+      title
+      subtitle
+      description
+      thumbnail
+      tag
+      created_at
+      updated_at
+    }
+    tag
+    image
+    price
+    size
+    color
+    status
+    created_at
+    updated_at
+    category {
+      _id
+      title
+      subtitle
+      thumbnail
+      created_at
+      updated_at
+    }
+  }
+}

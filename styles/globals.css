@@ -6,7 +6,10 @@ body {background: #FAFAFA}
 
 @layer components {
   .subheader {
-      @apply text-lg border border-black p-2 pt-5 text-black tracking-[15px] font-light;
+      @apply text-2xl border border-black p-3 pt-5 text-black tracking-[18px] font-light;
       writing-mode: vertical-rl;
+  }
+  .product-shadow{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   }
 }

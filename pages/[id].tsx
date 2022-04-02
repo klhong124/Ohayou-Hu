@@ -1,15 +1,15 @@
 import Head from "next/head";
-import ExampleQuery from "../graphql/ExampleQuery.gql";
+import ProductsQuery from "../graphql/Products.gql";
 import Product from "../components/product";
 
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 import client from "../plugin/apollo-client.js";
 import { GetServerSideProps } from "next";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { id } = params;
   const { data } = await client.query({
-    query: ExampleQuery,
+    query: ProductsQuery,
   });
   
   return { props: { data } };
@@ -29,7 +29,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>OHAYOU.HU</h1>
-      <div>{data?.greeting}</div>
+      <pre>{JSON.stringify(data?.products)}</pre>
       <Product />
     </div>
   );
