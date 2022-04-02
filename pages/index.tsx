@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import client from "../plugin/apollo-client.js";
 import { GetServerSideProps } from "next";
+import { ProductType } from "../types";
 
 import ProductsQuery from "../graphql/Products.gql";
 
@@ -46,28 +47,14 @@ export default function Home({ data }) {
       <Layout>
         <Cover />
         <Bio />
-        <div>{data?.products[0].color}</div>
-
         <ProductList subheader="最新貨品">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {data?.products.map((product: ProductType) => (
+            <Product product={product} />
+          ))}
         </ProductList>
         <br />
         <ProductList subheader="人氣熱賣">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+
         </ProductList>
       </Layout>
     </div>

@@ -19,7 +19,7 @@ query Products {
     status
     created_at
     updated_at
-    category {
+    categories {
       _id
       title
       subtitle

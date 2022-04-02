@@ -29,8 +29,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>OHAYOU.HU</h1>
-      <pre>{JSON.stringify(data?.products)}</pre>
-      <Product />
+      <Product product={data?.products[0]} />
     </div>
   );
 }

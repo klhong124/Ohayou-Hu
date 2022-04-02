@@ -1,11 +1,38 @@
-const product = () => {
+import { ProductType } from "../types";
+import { useRouter } from "next/router";
+
+const product = ({
+  product: {
+    _id,
+    tag,
+    model: { title, subtitle, description, thumbnail, model_tag },
+    image,
+    price,
+    size,
+    color,
+    status,
+    created_at,
+    updated_at,
+  },
+}: {
+  product: ProductType;
+}) => {
+  const router = useRouter();
+
+  const ProductClick = () => {
+    router.push(`/${_id}`);
+  };
+
   return (
     <>
-      <div className="w-[300px] snap-start" data-aos="fade-left">
+      <div className="w-[300px] snap-start" data-aos="fade-left" onClick={ProductClick}>
         <div className="w-[300px] bg-gray-200 aspect-square   hover:product-shadow">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+          <img src={thumbnail} className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
         </div>
-        <div className="text-sm text-gray-700">單色入｜LAYERING 必備刺繡打底闊褲</div>
+        <div className="text-sm text-gray-700">
+          {title}
+          {price}HKD
+        </div>
       </div>
     </>
   );
