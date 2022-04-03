@@ -1,0 +1,12 @@
+query Models {
+  models {
+    _id
+    title
+    subtitle
+    description
+    thumbnail
+    tag
+    created_at
+    updated_at
+  }
+}

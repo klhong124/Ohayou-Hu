@@ -1,4 +1,7 @@
 module.exports = {
+    env: {
+        API_ENDPOINT: process.env.API_ENDPOINT,
+    },
     webpack: (config) => {
         config.module.rules.push({
             test: /\.(graphql|gql)$/,
