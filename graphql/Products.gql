@@ -3,29 +3,23 @@ query Products {
     _id
     model {
       _id
+      image
       title
       subtitle
       description
       thumbnail
+      price
+      categories
+      size
+      color
       tag
       created_at
       updated_at
     }
-    tag
-    image
-    price
     size
     color
     status
     created_at
     updated_at
-    categories {
-      _id
-      title
-      subtitle
-      thumbnail
-      created_at
-      updated_at
-    }
   }
 }

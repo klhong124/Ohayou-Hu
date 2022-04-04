@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { useState } from "react";
-import Layout from "../layouts/default";
+import Layout from "../../layouts/admin";
 import { useQuery } from "@apollo/client";
-import ModelsQuery from "../graphql/Models.gql";
-import { ModelType } from "../types";
+import ModelsQuery from "../../graphql/Models.gql";
+import { ModelType } from "../../types";
 
 export default function CreateProduct() {
   const [model, setModel] = useState(null);
@@ -63,8 +63,19 @@ export default function CreateProduct() {
       </Head>
       <Layout>
         <div className="container mx-auto">
+          <div className="my-10 text-center text-3xl">Import Data</div>
           <div className="flex gap-4 flex-col lg:flex-row">
             {/* left */}
+            <div className="flex-none lg:w-1/3">
+              <div className="aspect-square">
+                <img src={model?.thumbnail} className="object-center object-cover w-full h-full" />
+              </div>
+              <div className="text-xl">{model?.title}</div>
+              <div className="text-base">{model?.subtitle}</div>
+              <hr className="my-2" />
+              <p>{model?.description}</p>
+            </div>
+            {/* right */}
             <div className="grow">
               <div className="image_uploader"></div>
 
@@ -74,39 +85,16 @@ export default function CreateProduct() {
                 <div className="flex gap-4">
                   <SelectModel />
                   <button type="button" className="button">
-                    Add Model
+                    Import Model
                   </button>
                 </div>
               </div>
-
-              <div>tag</div>
-              <input type="text" />
-
-              <div>price</div>
 
               <div>size</div>
 
               <div>color</div>
 
               <div>status</div>
-
-              <div>categories</div>
-              <select name="cars" id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-            </div>
-            {/* right */}
-            <div className="flex-none lg:w-1/3">
-              <div className="aspect-square">
-                <img src={model?.thumbnail} className="object-center object-cover w-full h-full" />
-              </div>
-              <div className="text-xl">{model?.title}</div>
-              <div className="text-base">{model?.subtitle}</div>
-              <hr className="my-2" />
-              <p>{model?.description}</p>
             </div>
           </div>
         </div>

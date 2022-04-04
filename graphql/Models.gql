@@ -1,10 +1,15 @@
 query Models {
   models {
     _id
+    image
     title
     subtitle
     description
     thumbnail
+    price
+    categories
+    size
+    color
     tag
     created_at
     updated_at
