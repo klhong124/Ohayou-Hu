@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar";
 import Aside from "../components/aside";
 
 export default function Layout({ children }) {
@@ -6,7 +5,7 @@ export default function Layout({ children }) {
     <>
       <main className="flex">
         <Aside />
-        <div className="mx-auto">{children}</div>
+        <div className="mx-auto w-full">{children}</div>
       </main>
     </>
   );
