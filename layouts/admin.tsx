@@ -5,7 +5,9 @@ export default function Layout({ children }) {
     <>
       <main className="flex">
         <Aside />
-        <div className="mx-auto w-full">{children}</div>
+        <div className="mx-auto p-4 grow">
+          <div className="relative">{children}</div>
+        </div>
       </main>
     </>
   );
