@@ -9,7 +9,8 @@ import "aos/dist/aos.css";
 
 import Script from "next/script";
 
-import "../styles/globals.css";
+import "@styles/globals.scss";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

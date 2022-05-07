@@ -1,5 +1,35 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@index/*": [
+        "components/index/*"
+      ],
+      "@about-us/*": [
+        "components/about-us/*"
+      ],
+      "@news/*": [
+        "components/news/*"
+      ],
+      "@campaigns/*": [
+        "components/campaigns/*"
+      ],
+      "@donate/*": [
+        "components/donate/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "types/*": [
+        "types/*"
+      ]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -22,8 +52,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "plugin/apollo-client.js"  ],
+    "**/*.tsx",
+  ],
   "exclude": [
     "node_modules"
   ]
