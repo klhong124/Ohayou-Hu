@@ -1,6 +1,11 @@
-import Navbar from "../components/navbar";
+import Navbar from "@components/navbar";
+import { FC } from "react";
 
-export default function Layout({ children }) {
+type Props = {
+  children: JSX.Element | JSX.Element[];
+};
+
+const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -8,5 +13,8 @@ export default function Layout({ children }) {
         {children}
       </main>
     </>
-  );
+  )
 }
+
+
+export default Layout;

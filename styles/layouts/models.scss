@@ -1,0 +1,17 @@
+.models {
+  @apply flex items-start relative;
+
+  .subheader {
+    @apply text-2xl border border-black p-3 pt-5 text-black tracking-[18px] font-light;
+    writing-mode: vertical-rl;
+  }
+  .arrow_button {
+    @apply group-hover:block hidden m-1 absolute top-1/2 transform -translate-y-1/2 drop-shadow-lg cursor-pointer;
+    &.left {
+      @apply left-20;
+    }
+    &.right {
+      @apply right-0;
+    }
+  }
+}

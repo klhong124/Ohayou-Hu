@@ -1,17 +1,16 @@
 import Head from "next/head";
-import ProductsQuery from "../graphql/Products.gql";
-import Product from "../components/product";
-
+import { FC } from "react";
 import { GetServerSideProps } from "next";
+
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   
   return { props: {  } };
 };
 
+type Props = {};
 
-
-export default function Home({ data }) {
+const ModelPage: FC<Props> = () => {
   // const { data, loading, error } = useQuery(ExampleQuery);
 
 
@@ -23,7 +22,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>OHAYOU.HU</h1>
-      {/* <Product /> */}
     </div>
   );
 }
+export default ModelPage;

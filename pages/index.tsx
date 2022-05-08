@@ -1,48 +1,37 @@
 import Head from "next/head";
-import ProductList from "@components/product-list";
-import Product from "@components/product";
-
+import ModelList from "@layouts/models";
 import Layout from "@layouts/default";
-import Image from "next/image";
 
-import contentful from "@plugin/contentful.js";
+import { FC } from "react";
 
+import Cover from "@index/cover";
+import Bio from "@index/bio";
+import { useQuery } from "@apollo/client";
+
+import MODELS_QUERY from "@graphql/modelsCollection.gql"
 import { GetServerSideProps } from "next";
-import { ProductType } from "types";
 
-import ProductsQuery from "@graphql/Products.gql";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { CONTENTFUL } from "@constants"
 
+import Model from "@components/model";
+// import { ModelType } from "types";
+// import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 export const getServerSideProps: GetServerSideProps = async () => {
 
 
-  // const models = await contentful.getEntries('models')
-  
 
-  return { props: {  } };
+
+  return { props: {} };
 };
 
-const Cover = () => {
-  return (
-    <div className="w-screen h-[200px] sm:h-[300px] relative ">
-      <Image className="" src="/cover-image.jpeg" layout="fill" objectFit="cover" />
-      <div className="text-xl sm:text-4xl border border-white py-5 px-5 sm:px-10 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 tracking-[5px] sm:tracking-[15px] font-extralight">見字食早餐</div>
-    </div>
-  );
-};
-const Bio = () => {
-  return (
-    <div className="flex my-12 sm:my-20  justify-center" data-aos="fade-up" data-aos-duration="3000">
-      <div className="border-b h-0 w-3 mx-4 mt-2 border-black"></div>
-      <p className="tracking-[5px] sm:tracking-[12px] font-light">「尋覓穿搭靈感，感受朝食の美，成就心之所向。」</p>
-    </div>
-  );
-};
+type Props = {};
 
-export default function Home({ data, products }) {
+const Home: FC<Props> = () => {
+  const { data, loading, error } = useQuery(MODELS_QUERY, { context: { clientName: CONTENTFUL } })
+
   return (
-    <div>
+    <div id="index">
       <Head>
         <title>OHAYOU.HU</title>
         <link rel="icon" href="/favicon.ico" />
@@ -50,19 +39,19 @@ export default function Home({ data, products }) {
       <Layout>
         <Cover />
         <Bio />
-
-        <ProductList subheader="最新貨品">
-          {/* {data?.products.map((product: ProductType, index) => (
-            <div key={index}>
-              <Product product={product} />
-            </div>
-          ))} */}
-        </ProductList>
+        <pre>
+          {JSON.stringify(data, null, 2)}
+        </pre>
+        <ModelList subheader="最新貨品">
+          {/* <Model/> */}
+        </ModelList>
         <br />
-        <ProductList subheader="人氣熱賣">
+        <ModelList subheader="人氣熱賣">
 
-        </ProductList>
+        </ModelList>
       </Layout>
     </div>
   );
 }
+
+export default Home;

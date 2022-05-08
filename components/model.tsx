@@ -1,23 +1,23 @@
-import { ProductType } from "../types";
+import { ModelType } from "types";
 import { useRouter } from "next/router";
+import { FC } from 'react';
 
-const product = ({
-  product: {
-    _id,
-    model: { title, price, thumbnail },
-    size,
-    color,
-    status,
-    created_at,
-    updated_at,
+type Props = {
+  model: ModelType
+};
+
+const Model: FC<Props> = ({
+  model: {
+    id,
+    title,
+    price,
+    thumbnail
   },
-}: {
-  product: ProductType;
 }) => {
   const router = useRouter();
 
   const ProductClick = () => {
-    router.push(`/${_id}`);
+    router.push(`/${id}`);
   };
 
   return (
@@ -35,4 +35,4 @@ const product = ({
   );
 };
 
-export default product;
+export default Model;

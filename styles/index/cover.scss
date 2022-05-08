@@ -1,0 +1,6 @@
+.cover {
+  @apply w-screen h-[200px] sm:h-[300px] relative;
+  > div {
+    @apply text-xl sm:text-4xl border border-white py-5 px-5 sm:px-10 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 tracking-[5px] sm:tracking-[15px] font-extralight;
+  }
+}

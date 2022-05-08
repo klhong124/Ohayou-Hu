@@ -1,0 +1,9 @@
+.bio {
+  @apply flex my-12 sm:my-20  justify-center;
+  > div {
+    @apply border-b h-0 w-3 mx-4 mt-2 border-black;
+  }
+  > p {
+    @apply tracking-[5px] sm:tracking-[12px] font-light;
+  }
+}

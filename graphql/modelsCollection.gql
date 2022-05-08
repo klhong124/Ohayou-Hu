@@ -1,0 +1,21 @@
+query {
+  modelsCollection {
+    total
+    items {
+      title
+      subtitle
+      thumbnail{
+        url
+      }
+      imagesCollection{
+        items{
+          url
+        }
+      }
+      description{
+        json
+      }
+      price
+    }
+  }
+}

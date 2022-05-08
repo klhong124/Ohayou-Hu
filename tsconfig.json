@@ -2,6 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@index/*": [
+        "components/index/*"
+      ],
       "@components/*": [
         "components/*"
       ],
@@ -16,6 +19,9 @@
       ],
       "@graphql/*": [
         "graphql/*"
+      ],
+      "@constants": [
+        "utils/constants"
       ],
       "types/*": [
         "types/*"
@@ -41,9 +47,8 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "plugin/contentful.js",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
