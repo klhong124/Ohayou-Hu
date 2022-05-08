@@ -3,6 +3,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "@plugin/apollo";
 import Head from "next/head";
 import { FC, useEffect } from "react";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -22,6 +23,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
+      <GoogleAnalytics />
       <ApolloProvider client={client}>
         <Component {...pageProps} />
       </ApolloProvider>

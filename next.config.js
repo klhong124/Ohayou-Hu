@@ -6,6 +6,7 @@ module.exports = (nextConfig = {}) => {
             API_ENDPOINT: process.env.API_ENDPOINT,
             CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
             CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
+            NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
         },
         webpack(config, options) {
             if (!options.defaultLoaders) {
@@ -52,16 +53,5 @@ module.exports = (nextConfig = {}) => {
         images: {
             domains: ['images.ctfassets.net']
         },
-        buildModules: [
-            '@nuxtjs/google-analytics'
-        ],
-        googleAnalytics: {
-            id: process.env.GOOGLE_ANALYTICS_ID
-        },
-        publicRuntimeConfig: {
-            googleAnalytics: {
-                id: process.env.GOOGLE_ANALYTICS_ID
-            }
-        }
     })
 }
