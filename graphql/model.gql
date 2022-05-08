@@ -1,0 +1,43 @@
+query ($where: ModelsFilter) {
+  model: modelsCollection(where: $where, limit: 1) {
+    items {
+      sys {
+        id
+        publishedAt
+        firstPublishedAt
+        publishedVersion
+      }
+      contentfulMetadata {
+        tags {
+          id
+          name
+        }
+      }
+      title
+      subtitle
+      description {
+        json
+      }
+      images: imagesCollection(limit: 10) {
+        items {
+          url
+        }
+      }
+      thumbnail {
+        url
+      }
+      categories: categoriesCollection(limit: 10) {
+        items {
+          title
+          subtitle
+          thumbnail {
+            url
+          }
+        }
+      }
+      price
+      color
+      size
+    }
+  }
+}

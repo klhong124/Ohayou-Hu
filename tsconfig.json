@@ -20,6 +20,9 @@
       "@graphql/*": [
         "graphql/*"
       ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
       "@constants": [
         "utils/constants"
       ],

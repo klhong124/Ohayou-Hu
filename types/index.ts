@@ -1,16 +1,39 @@
-
 export interface ModelType {
-  id: string;
+  sys: {
+    id: string;
+    publishedAt?: string;
+    firstPublishedAt?: string;
+    publishedVersion?: string;
+  };
+  contentfulMetadata: {
+    tags: {
+      id: string;
+      name: string;
+    };
+  };
   title: string;
   subtitle: string;
-  description: string;
-  image: string[];
+  description: {
+    json: Object;
+  };
+  image: {
+    items: {
+      url: string;
+    }[];
+  };
+  thumbnail: {
+    url: string;
+  };
+  categories: {
+    items: {
+      title: string;
+      subtitle: string;
+      thumbnail: {
+        url: string;
+      };
+    }[];
+  };
+  price: number;
   size: string[];
   color: string[];
-  categories: string[];
-  price: number;
-  thumbnail: string;
-  tag: string[];
-  created_at: Date;
-  updated_at: Date;
 }

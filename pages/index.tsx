@@ -6,12 +6,13 @@ import { FC } from "react";
 
 import Cover from "@index/cover";
 import Bio from "@index/bio";
-import { useQuery } from "@apollo/client";
 
-import MODELS_QUERY from "@graphql/modelsCollection.gql"
+
+import useContentful from "@hooks/contentful"
+
+import MODELS_QUERY from "@graphql/models.gql"
 import { GetServerSideProps } from "next";
 
-import { CONTENTFUL } from "@constants"
 
 import Model from "@components/model";
 // import { ModelType } from "types";
@@ -28,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 type Props = {};
 
 const Home: FC<Props> = () => {
-  const { data, loading, error } = useQuery(MODELS_QUERY, { context: { clientName: CONTENTFUL } })
+  const { data, loading, error } = useContentful(MODELS_QUERY)
 
   return (
     <div id="index">
@@ -39,11 +40,14 @@ const Home: FC<Props> = () => {
       <Layout>
         <Cover />
         <Bio />
-        <pre>
-          {JSON.stringify(data, null, 2)}
-        </pre>
         <ModelList subheader="最新貨品">
-          {/* <Model/> */}
+          {!loading && data?.models?.items.map((model, index) => {
+            return (
+              <div key={index}>
+                <Model model={model} />
+              </div>
+            )
+          })}
         </ModelList>
         <br />
         <ModelList subheader="人氣熱賣">

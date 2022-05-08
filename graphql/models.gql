@@ -1,18 +1,21 @@
 query {
-  modelsCollection {
+  models: modelsCollection {
     total
     items {
+      sys {
+        id
+      }
       title
       subtitle
-      thumbnail{
+      thumbnail {
         url
       }
-      imagesCollection{
-        items{
+      imagesCollection {
+        items {
           url
         }
       }
-      description{
+      description {
         json
       }
       price
