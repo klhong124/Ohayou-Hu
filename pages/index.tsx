@@ -1,23 +1,26 @@
 import Head from "next/head";
-import ProductList from "../components/product-list";
-import Product from "../components/product";
+import ProductList from "@components/product-list";
+import Product from "@components/product";
 
-import Layout from "../layouts/default";
+import Layout from "@layouts/default";
 import Image from "next/image";
 
-import client from "../plugin/apollo-client.js";
-import { GetServerSideProps } from "next";
-import { ProductType } from "../types";
+import contentful from "@plugin/contentful.js";
 
-import ProductsQuery from "../graphql/Products.gql";
+import { GetServerSideProps } from "next";
+import { ProductType } from "types";
+
+import ProductsQuery from "@graphql/Products.gql";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await client.query({
-    query: ProductsQuery,
-  });
 
-  return { props: { data } };
+
+  // const models = await contentful.getEntries('models')
+  
+
+  return { props: {  } };
 };
 
 const Cover = () => {
@@ -37,7 +40,7 @@ const Bio = () => {
   );
 };
 
-export default function Home({ data }) {
+export default function Home({ data, products }) {
   return (
     <div>
       <Head>
@@ -47,10 +50,13 @@ export default function Home({ data }) {
       <Layout>
         <Cover />
         <Bio />
+
         <ProductList subheader="最新貨品">
-          {data?.products.map((product: ProductType) => (
-            <Product product={product} />
-          ))}
+          {/* {data?.products.map((product: ProductType, index) => (
+            <div key={index}>
+              <Product product={product} />
+            </div>
+          ))} */}
         </ProductList>
         <br />
         <ProductList subheader="人氣熱賣">

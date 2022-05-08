@@ -2,21 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@index/*": [
-        "components/index/*"
-      ],
-      "@about-us/*": [
-        "components/about-us/*"
-      ],
-      "@news/*": [
-        "components/news/*"
-      ],
-      "@campaigns/*": [
-        "components/campaigns/*"
-      ],
-      "@donate/*": [
-        "components/donate/*"
-      ],
       "@components/*": [
         "components/*"
       ],
@@ -25,6 +10,12 @@
       ],
       "@styles/*": [
         "styles/*"
+      ],
+      "@plugin/*": [
+        "plugin/*"
+      ],
+      "@graphql/*": [
+        "graphql/*"
       ],
       "types/*": [
         "types/*"
@@ -52,7 +43,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", "plugin/contentful.js",
   ],
   "exclude": [
     "node_modules"
