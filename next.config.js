@@ -1,9 +1,10 @@
 const path = require('path')
 
 module.exports = (nextConfig = {}) => {
-    return Object.assign({}, nextConfig, {
+    return Object.assign(nextConfig, {
         env: {
-            API_ENDPOINT: process.env.API_ENDPOINT,
+            SUPABASE_ENDPOINT: process.env.SUPABASE_ENDPOINT,
+            SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
             CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
             CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
             NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,

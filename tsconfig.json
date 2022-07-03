@@ -28,6 +28,9 @@
       ],
       "types/*": [
         "types/*"
+      ],
+      "@supabase": [
+        "plugin/supabase"
       ]
     },
     "target": "es5",

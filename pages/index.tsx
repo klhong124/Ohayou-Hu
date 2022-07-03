@@ -20,9 +20,6 @@ import Model from "@components/model";
 
 export const getServerSideProps: GetServerSideProps = async () => {
 
-
-
-
   return { props: {} };
 };
 
